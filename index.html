@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-3">
+        
+        <div class="dropdown mb-3">
+            <button onclick="toggleDropdown()" class="btn btn-primary dropbtn">Select Sender</button>
+            <div id="senderDropdown" class="dropdown-content">
+                <a href="#" onclick="selectSender('Sender 1')">Sender 1</a>
+                <a href="#" onclick="selectSender('Sender 2')">Sender 2</a>
+            </div>
+        </div>       
+
+        <div class="input-group mb-3">
+            <input type="text" id="inputText" class="form-control" placeholder="Enter Message">
+            <button class="btn btn-success" onclick="handleButtonClick()">Send Message</button>
+        </div>
+    </div>
+
+    <section>
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-4">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between align-items-center p-3"
+                            style="border-top: 4px solid #ffa900;">
+                            <h5 class="mb-0">Chat messages</h5>
+                            <div class="d-flex flex-row align-items-center">
+                                <i class="fas fa-minus me-3 text-muted fa-xs"></i>
+                                <i class="fas fa-comments me-3 text-muted fa-xs"></i>
+                                <i class="fas fa-times text-muted fa-xs"></i>
+                            </div>
+                        </div>
+
+                        <div class="card-body" data-mdb-perfect-scrollbar-init style="position: relative; height: 400px">
+                            <div class="chat-container">
+                                <div id="messagesContainer" class="messages-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
